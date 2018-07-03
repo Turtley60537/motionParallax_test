@@ -7,7 +7,7 @@ const detector = new objectdetect.detector(
     );
 
 const video = document.getElementById("camera");
-const coords = detector.detect(canvas, 1);
+const coords = detector.detect(video, 1);
 
 
 let localStream;
