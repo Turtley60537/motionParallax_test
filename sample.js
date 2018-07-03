@@ -42,7 +42,10 @@ let det = () => {
 
     // let box = smooth(c1, c2);
     // box = c2;
-    if(!Array.isArray(c1) || !Array.isArray(c2)) return;
+    if(!Array.isArray(c1) || !Array.isArray(c2)) {
+        pre_coords = coords;
+        return;
+    }
         
     let box = [];
     for(let i=0; i<c2.length; i++) {
