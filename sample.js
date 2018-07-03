@@ -8,14 +8,14 @@ const detector = new objectdetect.detector(
 
 const video = document.getElementById("camera");
 
-let pre_coords;
-let coords;
+let pre_coords = [];
+let coords = [];
 
 let det = () => {
     coords = detector.detect(video, 1);
 
     console.log(coords);
-    if(!pre_coords[0] && !coords[0]){
+    if(pre_coords.length>0 && coords.length>0){
         pre_coords = coords;
         return;
     }
