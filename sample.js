@@ -13,16 +13,16 @@ let coords;
 
 let det = () => {
     coords = detector.detect(video,1);
-    // coords = smooth(pre_coords, coords);
-    console.log(coords[0]);
-    let p = getViewPoint(canvas, coords[0]);
+    box = smooth(pre_coords[0], coords[0]);
+    console.log(box);
+    let p = getViewPoint(canvas, box);
     drawWindow(canvas, p)
 
     pre_coords = detector.detect(video, 1);
 
 }
 
-setInterval(det, 1000);
+setInterval(det, 100);
 
 
 
@@ -60,7 +60,7 @@ function drawWindow(window_canvas, point) {
     let h = window_canvas.height
     let color = 200;
 
-    let num = 10;
+    let num = 20;
     for (let i = 0; i < num; i++) {
         ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
         ctx.fillRect(x - w / 2, y - h / 2, w, h);
