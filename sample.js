@@ -46,6 +46,7 @@ let det = () => {
     let box = [];
     for(let i=0; i<c2.length; i++) {
         box[i] = smooth(c1[i], c2[i]);
+        console.log(i +","+box[i]);
     }
 
     console.log(box);
