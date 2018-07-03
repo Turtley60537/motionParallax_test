@@ -38,7 +38,8 @@ let det = () => {
     let c2 = (coords.length==5 && typeof coords[0]=='number') ? coords : coords[0];
     // console.log(coords.length);
     let box = [];
-    for(let i=0; i<c1.length; i++) {
+    
+    for(let i=0; i<c2.length; i++) {
         box[i] = smooth(c1[i], c2[i]);
     }
 
