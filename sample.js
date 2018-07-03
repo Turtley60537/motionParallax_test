@@ -39,7 +39,7 @@ let det = () => {
     // console.log(coords.length);
     
 
-    let box = smooth(c1, c2);
+    // let box = smooth(c1, c2);
     // box = c2;
     if(!Array.isArray(c1) || !Array.isArray(c2)) return;
         
