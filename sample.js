@@ -45,7 +45,7 @@ let det = () => {
 
     let box = smooth(c1, c2);
     // box = c2;
-    console.log(typeof c1);
+    console.log(c1[0]);
     // console.log(c2.length);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p);
