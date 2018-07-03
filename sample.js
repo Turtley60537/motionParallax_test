@@ -62,7 +62,7 @@ let det = () => {
 
 }
 
-setInterval(det, 10);
+setInterval(det, 100);
 
 
 
@@ -88,7 +88,7 @@ function drawWindow(window_canvas, point) {
     let h = window_canvas.height
     let color = 200;
 
-    let num = 100;
+    let num = 15;
     for (let i = 0; i < num; i++) {
         ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
         ctx.fillRect(x - w / 2, y - h / 2, w, h);
