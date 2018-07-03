@@ -8,10 +8,16 @@ const detector = new objectdetect.detector(
 
 const video = document.getElementById("camera");
 
+let pre_coords;
 let coords;
 
 let det = () => {
-    coords = detector.detect(video, 1);
+    coords = detector.detect(video,1);
+    coords = smooth(pre_coords, coords);
+    let p = getViewPoint(canvas, coords);
+    drawWindow(canvas, p)
+
+    pre_coords = detector.detect(video, 1);
 
 }
 
