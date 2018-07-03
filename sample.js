@@ -7,13 +7,19 @@ const detector = new objectdetect.detector(
     );
 
 const video = document.getElementById("camera");
-const coords = detector.detect(video, 1);
+
+const coords;
+
+let det = () => {
+    coords = detector.detect(video, 1);
+
+}
+
+setInterval(det, 1000);
+
 
 
 let localStream;
-
-
-
 // start local video
 function startVideo() {
     navigator.mediaDevices.getUserMedia({video: true, audio: false})
