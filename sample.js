@@ -1,3 +1,17 @@
+let localStream;
+// start local video
+function startVideo() {
+    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+    .then(function (stream) { // success
+    localStream = stream;
+    video.src = window.URL.createObjectURL(localStream);
+
+    }).catch(function (error) { // error
+    console.error('mediaDevice.getUserMedia() error:', error);
+    return;
+    });
+}
+
 const canvas = document.getElementById('canvas');
 
 const scale = 4;
@@ -23,8 +37,13 @@ let det = () => {
     let c1 = (pre_coords.length==5 && typeof pre_coords[0]=='number') ? pre_coords : pre_coords[0];
     let c2 = (coords.length==5 && typeof coords[0]=='number') ? coords : coords[0];
     // console.log(coords.length);
-    let box = smooth(c1, c2);
-    box = c2;
+    let box = [];
+    for(let i=0; i<c1.length; i++) {
+        box[i] = smooth(c1[i], c2[i]);
+    }
+
+    // let box = smooth(c1, c2);
+    // box = c2;
     // console.log(box);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p);
@@ -38,19 +57,7 @@ setInterval(det, 10);
 
 
 
-let localStream;
-// start local video
-function startVideo() {
-    navigator.mediaDevices.getUserMedia({video: true, audio: false})
-    .then(function (stream) { // success
-    localStream = stream;
-    video.src = window.URL.createObjectURL(localStream);
 
-    }).catch(function (error) { // error
-    console.error('mediaDevice.getUserMedia() error:', error);
-    return;
-    });
-}
 
 function smooth(old_value, new_value, alpha = 0.2) {
     return old_value * (1 - alpha) + new_value * alpha;
