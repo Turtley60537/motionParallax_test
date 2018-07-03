@@ -9,6 +9,19 @@ const detector = new objectdetect.detector(
 const video = document.getElementById("camera");
 const coords = detector.detect(video, 1);
 
+let localStream;
+
+// start local video
+function startVideo() {
+    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+    .then(function (stream) { // success
+    localStream = stream;
+    video.src = window.URL.createObjectURL(localStream);
+    }).catch(function (error) { // error
+    console.error('mediaDevice.getUserMedia() error:', error);
+    return;
+    });
+}
 
 function smooth(old_value, new_value, alpha = 0.2) {
     return old_value * (1 - alpha) + new_value * alpha;
