@@ -12,9 +12,9 @@ let pre_coords;
 let coords;
 
 let det = () => {
-    coords = detector.detect(video,1);
-    box = smooth(pre_coords[0], coords[0]);
-    console.log(box);
+    coords = detector.detect(video, 1);
+    console.log(coords);
+    let box = smooth(pre_coords[0], coords[0]);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p)
 
@@ -22,7 +22,7 @@ let det = () => {
 
 }
 
-setInterval(det, 100);
+setInterval(det, 1000);
 
 
 
