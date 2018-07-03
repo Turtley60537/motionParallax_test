@@ -37,7 +37,8 @@ let det = () => {
     let c1 = (pre_coords.length==5 && typeof pre_coords[0]=='number') ? pre_coords : pre_coords[0];
     let c2 = (coords.length==5 && typeof coords[0]=='number') ? coords : coords[0];
     // console.log(coords.length);
-    
+    console.log("c1"+Array.isArray(c1));
+    console.log("c2"+Array.isArray(c2));
 
     // let box = smooth(c1, c2);
     // box = c2;
