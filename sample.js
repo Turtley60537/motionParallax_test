@@ -34,7 +34,7 @@ let det = () => {
 
 }
 
-setInterval(det, 1000);
+setInterval(det, 100);
 
 
 
