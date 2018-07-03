@@ -29,12 +29,12 @@ let det = () => {
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p);
 
-    console.log("true");
+    // console.log("true");
     pre_coords = coords;
 
 }
 
-setInterval(det, 100);
+setInterval(det, 10);
 
 
 
@@ -72,7 +72,7 @@ function drawWindow(window_canvas, point) {
     let h = window_canvas.height
     let color = 200;
 
-    let num = 20;
+    let num = 100;
     for (let i = 0; i < num; i++) {
         ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
         ctx.fillRect(x - w / 2, y - h / 2, w, h);
