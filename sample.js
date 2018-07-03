@@ -20,8 +20,8 @@ let det = () => {
         return;
     }
 
-    let c1 = pre_coords.length>=2 ? pre_coords[0] : pre_coords;
-    let c2 = coords.length>=2 ? coords[0] : coords;
+    let c1 = pre_coords.length==5 ? pre_coords : pre_coords[0];
+    let c2 = coords.length==5 ? coords : coords[0];
     let box = smooth(c1, c2);
     // box = c2;
     console.log(box);
