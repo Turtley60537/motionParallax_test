@@ -8,7 +8,7 @@ const detector = new objectdetect.detector(
 
 const video = document.getElementById("camera");
 
-const coords;
+let coords;
 
 let det = () => {
     coords = detector.detect(video, 1);
