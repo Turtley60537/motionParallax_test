@@ -14,8 +14,8 @@ let coords;
 let det = () => {
     coords = detector.detect(video,1);
     // coords = smooth(pre_coords, coords);
-    console.log(coords);
-    let p = getViewPoint(canvas, coords);
+    console.log(coords[0]);
+    let p = getViewPoint(canvas, coords[0]);
     drawWindow(canvas, p)
 
     pre_coords = detector.detect(video, 1);
