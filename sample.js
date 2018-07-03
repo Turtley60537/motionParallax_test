@@ -20,10 +20,13 @@ let det = () => {
         return;
     }
 
-    let box = smooth(pre_coords[0], coords[0]);
+    let c1 = pre_coords.length==2 ? pre_coords : pre_coords[0];
+    let c2 = coords==2 ? coords : coords[0];
+    let box = smooth(c1, c2);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p)
 
+    console.log("true");
     pre_coords = coords;
 
 }
