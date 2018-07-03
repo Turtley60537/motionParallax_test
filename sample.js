@@ -22,7 +22,7 @@ let det = () => {
 
     let c1 = pre_coords.length==5 ? pre_coords : pre_coords[0];
     let c2 = coords.length>=5 ? coords : coords[0];
-    console.log(coord.length);
+    console.log(coords.length);
     // let box = smooth(c1, c2);
     box = c2;
     console.log(box);
