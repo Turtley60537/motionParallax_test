@@ -59,6 +59,7 @@ function drawWindow(window_canvas, point) {
     let h = window_canvas.height
     let color = 200;
 
+    let num = 10;
     for (let i = 0; i < num; i++) {
         ctx.fillStyle = `rgb(${color}, ${color}, ${color})`;
         ctx.fillRect(x - w / 2, y - h / 2, w, h);
