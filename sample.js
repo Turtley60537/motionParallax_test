@@ -14,7 +14,7 @@ let coords = [];
 let det = () => {
     coords = detector.detect(video, 1);
 
-    console.log(coords);
+    // console.log(coords);
     if(!pre_coords.length>0 && !coords.length>0){
         pre_coords = coords;
         return;
@@ -23,6 +23,7 @@ let det = () => {
     let c1 = pre_coords.length==2 ? pre_coords : pre_coords[0];
     let c2 = coords==2 ? coords : coords[0];
     let box = smooth(c1, c2);
+    console.log(box);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p)
 
