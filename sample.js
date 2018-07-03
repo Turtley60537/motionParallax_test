@@ -13,7 +13,13 @@ let coords;
 
 let det = () => {
     coords = detector.detect(video, 1);
+
     console.log(coords);
+    if(!pre_coords && !coords){
+        pre_coords = detector.detect(video, 1);
+        return;
+    }
+
     let box = smooth(pre_coords[0], coords[0]);
     let p = getViewPoint(canvas, box);
     drawWindow(canvas, p)
